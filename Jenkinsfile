@@ -57,12 +57,11 @@ pipeline {
     }
 }
 
-        stage('5. Publish') {
-            steps {
-                archiveArtifacts artifacts: 'hiredis-v${BUILD_NUMBER}.tar.gz', fingerprint: true
-            }
-        }
+     stage('5. Publish') {
+    steps {
+        archiveArtifacts artifacts: "hiredis-v${BUILD_NUMBER}.tar.gz", fingerprint: true
     }
+}
 
     post {
         always {
