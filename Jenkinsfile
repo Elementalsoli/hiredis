@@ -6,7 +6,7 @@ pipeline {
         DOCKER_HUB_USER = "tkaminskiagh" 
     }
 
-    stages {
+ ##   stages {
         stage('0. Clean & Checkout') {
             steps {
                 cleanWs()
