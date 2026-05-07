@@ -62,6 +62,7 @@ pipeline {
         archiveArtifacts artifacts: "hiredis-v${BUILD_NUMBER}.tar.gz", fingerprint: true
     }
 }
+    }
 
     post {
         always {
