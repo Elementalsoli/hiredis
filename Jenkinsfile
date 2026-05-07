@@ -49,12 +49,13 @@ pipeline {
         }
 
         stage('4. Deploy (Sandbox)') {
-            steps {
-                sh "docker rm -f hiredis-sandbox || true"
-                sh "docker run -d --name hiredis-sandbox ${DOCKER_HUB_USER}/hiredis-final:${IMAGE_TAG}"
-                sh "docker ps | grep hiredis-sandbox"
-            }
-        }
+    steps {
+        sh "docker rm -f hiredis-sandbox || true"
+        sh "docker run -d --name hiredis-sandbox ${DOCKER_HUB_USER}/hiredis-final:${IMAGE_TAG}"
+      
+        sh "docker ps -a | grep hiredis-sandbox"
+    }
+}
 
         stage('5. Publish') {
             steps {
