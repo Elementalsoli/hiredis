@@ -1,0 +1,7 @@
+ROM ubuntu:24.04
+  
+WORKDIR /app
+
+COPY libhiredis.so /usr/lib/libhiredis.so
+
+CMD ["ls", "-l", "/usr/lib/libhiredis.so"]
